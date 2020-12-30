@@ -1,10 +1,12 @@
-import Link from 'next/link';
 import { Flex, Image, Button, Text } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
 
-import styled from '@emotion/styled';
+interface ICard {
+  mode: 'project' | 'post';
+}
 
-export const Card = () => {
+export const Card = ({ mode }) => {
   return (
     <Flex
       flexDirection="column"
@@ -34,9 +36,30 @@ export const Card = () => {
           sunt.
         </Text>
         <Flex justifyContent="flex-end">
-          <Button fontSize="0.8rem" p="0.5rem" rightIcon={<ArrowForwardIcon />}>
-            Leer Mas
-          </Button>
+          {mode === 'post' ? (
+            <Button
+              fontSize="0.8rem"
+              p="0.5rem"
+              rightIcon={<ArrowForwardIcon />}
+            >
+              Leer Mas
+            </Button>
+          ) : (
+            <Flex>
+              <Link href="/">
+                <Image
+                  src="/github.svg"
+                  w="1.5rem"
+                  h="1.5rem"
+                  mr="0.8rem"
+                  cursor="pointer"
+                />
+              </Link>
+              <Link href="/">
+                <Image src="/web.svg" w="1.5rem" h="1.5rem" cursor="pointer" />
+              </Link>
+            </Flex>
+          )}
         </Flex>
       </Flex>
     </Flex>

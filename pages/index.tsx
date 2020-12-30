@@ -1,41 +1,10 @@
 import Link from 'next/link';
-import {
-  Flex,
-  Divider as CDivider,
-  Box,
-  Image,
-  Heading,
-  Text,
-  Button,
-} from '@chakra-ui/react';
-import styled from '@emotion/styled';
-import { Card } from '../components/Card';
-
-const Divider = styled(CDivider)`
-  background: #000;
-`;
+import { Flex, Box, Image, Heading, Text, Button } from '@chakra-ui/react';
+import { Card, Layout } from '../components';
 
 export default function Home() {
   return (
-    <Flex flexDirection="column" px="2rem">
-      <Flex
-        h="4rem"
-        justifyContent="space-between"
-        alignItems="center"
-        mb="2rem"
-        p="1rem"
-      >
-        <Box w="3rem" h="3rem">
-          <Link href="/">
-            <Image src="faro.png" />
-          </Link>
-        </Box>
-        <Flex w="8rem" justifyContent="space-between" alignItems="center">
-          <Link href="/">Blog</Link>
-          <Divider orientation="vertical" />
-          <Link href="/projects">Projectos</Link>
-        </Flex>
-      </Flex>
+    <Layout>
       <Flex
         flexWrap="wrap-reverse"
         p="1rem"
@@ -77,15 +46,15 @@ export default function Home() {
         <Heading my="1.5rem">Posts</Heading>
         <Flex justifyContent="center">
           <Flex w="full" maxW="60rem" flexWrap="wrap" justifyContent="center">
-            <Card />
-            <Card />
-            <Card />
+            <Card mode="post" />
+            <Card mode="post" />
+            <Card mode="post" />
           </Flex>
         </Flex>
         <Flex w="full" justifyContent="center" my="2rem">
           <Button>Ver mas</Button>
         </Flex>
       </Flex>
-    </Flex>
+    </Layout>
   );
 }
