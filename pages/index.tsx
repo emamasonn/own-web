@@ -6,9 +6,10 @@ import {
   Image,
   Heading,
   Text,
-  Container,
+  Button,
 } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import { Card } from '../components/Card';
 
 const Divider = styled(CDivider)`
   background: #000;
@@ -16,7 +17,7 @@ const Divider = styled(CDivider)`
 
 export default function Home() {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" px="2rem">
       <Flex
         h="4rem"
         justifyContent="space-between"
@@ -25,10 +26,12 @@ export default function Home() {
         p="1rem"
       >
         <Box w="3rem" h="3rem">
-          <Image src="faro.png" />
+          <Link href="/">
+            <Image src="faro.png" />
+          </Link>
         </Box>
         <Flex w="8rem" justifyContent="space-between" alignItems="center">
-          <Link href="https://www.youtube.com/">Blog</Link>
+          <Link href="/">Blog</Link>
           <Divider orientation="vertical" />
           <Link href="/projects">Projectos</Link>
         </Flex>
@@ -58,10 +61,29 @@ export default function Home() {
             Social Media
           </Heading>
           <Flex>
-            <Image src="github.svg" mr="0.5rem" />
-            <Image src="linkedin.svg" mr="0.5rem" />
-            <Image src="twitter.svg" mr="0.5rem" />
+            <Link href="https://github.com/emamasonn">
+              <Image src="github.svg" mr="0.5rem" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/demamason">
+              <Image src="linkedin.svg" mr="0.5rem" />
+            </Link>
+            <Link href="https://twitter.com/D_E_Mason">
+              <Image src="twitter.svg" mr="0.5rem" />
+            </Link>
           </Flex>
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column">
+        <Heading my="1.5rem">Posts</Heading>
+        <Flex justifyContent="center">
+          <Flex w="full" maxW="60rem" flexWrap="wrap" justifyContent="center">
+            <Card />
+            <Card />
+            <Card />
+          </Flex>
+        </Flex>
+        <Flex w="full" justifyContent="center" my="2rem">
+          <Button>Ver mas</Button>
         </Flex>
       </Flex>
     </Flex>
