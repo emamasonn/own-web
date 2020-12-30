@@ -18,7 +18,7 @@ export const Layout = ({ children }) => {
       >
         <Box w="3rem" h="3rem">
           <Link href="/">
-            <Image src="faro.png" />
+            <Image src="faro.png" cursor="pointer" />
           </Link>
         </Box>
         <Flex w="8rem" justifyContent="space-between" alignItems="center">
